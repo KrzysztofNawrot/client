@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
     metro: {
-        isWorking: true
+        isWorking: false
     },
     user: {
         isDev: true
