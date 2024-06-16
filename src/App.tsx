@@ -1,26 +1,27 @@
-import React from 'react';
-import logo from './logo.svg';
+import { useSelector } from 'react-redux';
 import './App.css';
+import { AppState } from './store';
 
-function App() {
+
+const App = () => {
+  const isMetroWorking = useSelector((state: AppState) => state.data.metro.isWorking);
+  
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <h1>
+        Czy Metro Działa? 
+      </h1>
+      <h2>
+        {isMetroWorking ? 
+          <p className='App-metro-state-green'>Tak</p> 
+          : 
+          <p className='App-metro-state-red'>Nie</p>
+        }
+      </h2>
+    </>
   );
-}
+};
 
 export default App;
